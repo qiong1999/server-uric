@@ -1,0 +1,47 @@
+const patient = (sequelize,DataTypes)=>sequelize.define('patient',{
+    uuid:{
+        type:DataTypes.STRING,
+        primaryKey:true,
+        unique:true,
+        allowNull:false,
+    },
+    openid:{
+        type:DataTypes.STRING,
+        unique:true,
+        allowNull:false,
+    },
+    headurl:{
+        type:DataTypes.STRING,
+    },
+    name:{
+        type:DataTypes.STRING,
+    },
+    phone:{
+        type:DataTypes.STRING,
+    },
+    identify:{
+        type:DataTypes.STRING,
+    },
+    address:{
+        type:DataTypes.STRING,
+    },
+    relative_name:{
+        type:DataTypes.STRING,
+    },
+    relative_relation:{
+        type:DataTypes.STRING,
+    },
+    relative_phone:{
+        type:DataTypes.STRING,
+    },
+    uric_targe:{
+        type:DataTypes.INTEGER,
+    },
+    sugar_target:{
+        type:DataTypes.INTEGER,
+    },
+    fat_target:{
+        type:DataTypes.INTEGER
+    }
+});
+module.exports = patient;

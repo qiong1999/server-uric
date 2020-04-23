@@ -1,9 +1,14 @@
-const Sequelize = require('sequelize');
-const sequelize = require('./config/db');
-const { admin,measure_single,measure_triple,patient,relation_patient_doctor,subject} = require('./models/index');
-admin(sequelize,Sequelize).sync({});
-measure_single(sequelize,Sequelize).sync({});
-measure_triple(sequelize,Sequelize).sync({});
-patient(sequelize,Sequelize).sync({});
-relation_patient_doctor(sequelize,Sequelize).sync({});
-subject(sequelize,Sequelize).sync({});
+const admin = require('./Admin');
+const measure_single = require('./Measure_single');
+const measure_triple = require('./Measure_triple');
+const patient = require('./Patient');
+const relation_patient_doctor = require('./Relation_patient_doctor');
+const subject = require('./Subject');
+module.exports = {
+    admin,
+    measure_single,
+    measure_triple,
+    patient,
+    relation_patient_doctor,
+    subject,
+};
