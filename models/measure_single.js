@@ -1,16 +1,12 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../configs/db');
-const Measure_single=sequelize.define('measure_single',{
+const measure_single = (sequelize,DataTypes)=>sequelize.define('measure_single',{
     id:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
         primaryKey:true,
         allowNull:false,
         unique:true,
     },
     uric:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
     }
-},{
-    freezeTableName:false,
-})
-module.exports= Measure_single;
+});
+module.exports = measure_single;

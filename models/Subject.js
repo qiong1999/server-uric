@@ -1,19 +1,15 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../configs/db');
-const Subject = sequelize.define('subject',{
+const subject = (sequelize,DataTypes)=>sequelize.define('subject',{
     id:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
         primaryKey:true,
-        allowNull:false,
         unique:true,
+        allowNull:false,
     },
     name:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     sheet_name:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     }
-},{
-    freezeTableName:false,
-})
-module.exports=Subject;
+});
+module.exports=subject;

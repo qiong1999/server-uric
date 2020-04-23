@@ -1,51 +1,47 @@
-const sequelize = require('../configs/db');
-const Sequelize = require('sequelize');
-const Patient = sequelize.define('patients',{
+const patient = (sequelize,DataTypes)=>sequelize.define('patient',{
     uuid:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
         primaryKey:true,
         unique:true,
+        allowNull:false,
     },
     openid:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
         unique:true,
+        allowNull:false,
     },
     headurl:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     name:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     phone:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     identify:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     address:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     relative_name:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     relative_relation:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
     relative_phone:{
-        type:Sequelize.STRING,
+        type:DataTypes.STRING,
     },
-    uric_target:{
-        type:Sequelize.INTEGER,
+    uric_targe:{
+        type:DataTypes.INTEGER,
     },
     sugar_target:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
     },
     fat_target:{
-        type:Sequelize.INTEGER,
-    },
-  
-},
-{
-   freezeTableName:false, 
+        type:DataTypes.INTEGER
+    }
 });
-module.exports = Patient;
+module.exports = patient;

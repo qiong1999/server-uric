@@ -1,20 +1,18 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../configs/db');
-const Measure_triple = sequelize.define('measure_triple',{
+const measure_triple = (sequelize,DataTypes)=>sequelize.define('measure_triple',{
     id:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
         primaryKey:true,
-        allowNull:false,
         unique:true,
+        allowNull:false,
     },
     uric:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
     },
     fat:{
-        type:Sequelize.INTEGER,
+        type:DataTypes.INTEGER,
     },
     sugar:{
-        type:Sequelize.INTEGER,
-    },
+        type:DataTypes.INTEGER
+    }
 });
-module.exports = Measure_triple;
+module.exports = measure_triple;
